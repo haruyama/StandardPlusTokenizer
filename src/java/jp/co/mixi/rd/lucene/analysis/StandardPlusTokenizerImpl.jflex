@@ -76,7 +76,7 @@ ExtendNumLetEx = {ExtendNumLet}                ({Format} | {Extend})*
 HanEx = {Han} ({Format} | {Extend})*
 HiraganaEx = {Hiragana} ({Format} | {Extend})*
 
-Space = [\p{Z}]
+Space = [\p{White_Space}]
 
 %{
   /** Alphanumeric sequences */
