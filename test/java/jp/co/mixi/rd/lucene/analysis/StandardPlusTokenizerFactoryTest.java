@@ -88,4 +88,18 @@ public class StandardPlusTokenizerFactoryTest extends TestCase {
       }
     }
   }
+
+  @Test
+  public void testStandardPlusTokenizerSpace() throws Exception {
+    try (Reader reader = new StringReader("あ　い")) {
+      StandardPlusTokenizerFactory factory = new StandardPlusTokenizerFactory();
+      factory.setLuceneMatchVersion(BaseTokenStreamTestCase.TEST_VERSION_CURRENT);
+      Map<String, String> args = Collections.emptyMap();
+      factory.init(args);
+      try (Tokenizer stream = factory.create(reader)) {
+        BaseTokenStreamTestCase.assertTokenStreamContents(stream,
+            new String[] {"あ", "い"});
+      }
+    }
+  }
 }

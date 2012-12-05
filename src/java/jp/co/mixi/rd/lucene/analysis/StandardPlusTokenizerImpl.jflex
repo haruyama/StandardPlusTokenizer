@@ -76,7 +76,7 @@ ExtendNumLetEx = {ExtendNumLet}                ({Format} | {Extend})*
 HanEx = {Han} ({Format} | {Extend})*
 HiraganaEx = {Hiragana} ({Format} | {Extend})*
 
-Space = [ \r\n\t\f]
+Space = [\p{Z}]
 
 %{
   /** Alphanumeric sequences */
@@ -195,5 +195,5 @@ Space = [ \r\n\t\f]
 //        WB3b.  ÷ (Newline | CR | LF)
 //        WB14.  Any ÷ Any
 //
-{Space} { break; }
+{Space} { /* Space */ break; }
 [^] { return OTHER_TYPE; }
