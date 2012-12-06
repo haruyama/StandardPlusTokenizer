@@ -7,10 +7,10 @@
   :dependencies [
                  [org.clojure/clojure "1.4.0"]
                  [org.apache.solr/solr-core "4.0.0"]
+                 [org.apache.lucene/lucene-test-framework "4.0.0"]
                  ]
   :profiles  {:dev  {:dependencies  [
                                      [junit/junit "4.10"]
-                                     [org.apache.lucene/lucene-test-framework "4.0.0"]
                                      ]
                      }}
   :plugins  [[lein-junit "1.0.3"]]
