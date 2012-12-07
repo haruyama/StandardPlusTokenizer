@@ -11,7 +11,7 @@ It tokenizes all characters but spaces.
 * lein jar
 
 * If you modify .flex, you should install JFlex trunk(http://jflex.svn.sourceforge.net/svnroot/jflex/trunk) and convert .flex to .java using JFlex.
-  * java -cp .../jflex-1.5.0-SNAPSHOT.jar jflex.Main src/main/java/jp/co/mixi/rd/lucene/analysis/StandardPlusTokenizerImpl.jflex
+  * java -cp .../jflex-1.5.0-SNAPSHOT.jar jflex.Main src/java/jp/co/mixi/rd/lucene/analysis/StandardPlusTokenizerImpl.jflex
 
 ## solrconfig.xml sample
 
