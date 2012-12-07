@@ -1,11 +1,10 @@
 (defproject standard-plus-tokenizer "0.2.0-SNAPSHOT"
   :min-lein-version "2.0.0"
-  :description "FIXME: write description"
-  :url "http://example.com/FIXME"
+  :description "An extension of Lucene's StandardTokenizer. It tokenizes all characters but spaces. (StandardTokenizer doesn't tokenizes some characters: Symbol, Punctuation, ...)"
+  :url "https://github.com/haruyama/StandardPlusTokenizer"
   :license {:name "Apache License Verson 2.0"
-            :url "http://www.apache.org/licenses/"}
+            :url "http://www.apache.org/licenses/LICENSE-2.0"}
   :dependencies [
-                 [org.clojure/clojure "1.4.0"]
                  [org.apache.solr/solr-core "4.0.0"]
                  [org.apache.lucene/lucene-test-framework "4.0.0"]
                  ]
