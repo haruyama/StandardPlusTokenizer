@@ -33,6 +33,9 @@ import org.apache.lucene.analysis.standard.StandardAnalyzer;
  *       Asian languages, including Thai, Lao, Myanmar, and Khmer</li>
  *   <li>&lt;IDEOGRAPHIC&gt;: A single CJKV ideographic character</li>
  *   <li>&lt;HIRAGANA&gt;: A single hiragana character</li>
+ *   <li>&lt;KATAKANA&gt;: A single hiragana character</li>
+ *   <li>&lt;HANGUL&gt;: A single hangle character</li>
+ *   <li>&lt;OTHER&gt;: A single other character</li>
  * </ul>
  */
 %%
