@@ -1,6 +1,6 @@
-(defproject standard-plus-tokenizer "0.2.0-SNAPSHOT"
+(defproject standard-plus-tokenizer "0.2.0"
   :min-lein-version "2.0.0"
-  :description "An extension of Lucene's StandardTokenizer. It tokenizes all characters but spaces. (StandardTokenizer doesn't tokenizes some characters: Symbol, Punctuation, ...)"
+  :description "An extension of Lucene's StandardTokenizer. This tokenizer tokenizes all characters but spaces. (StandardTokenizer doesn't tokenizes some characters: Symbol, Punctuation, ...)"
   :url "https://github.com/haruyama/StandardPlusTokenizer"
   :license {:name "Apache License Verson 2.0"
             :url "http://www.apache.org/licenses/LICENSE-2.0"}
