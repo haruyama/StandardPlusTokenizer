@@ -1,4 +1,4 @@
-# standard-plus-tokenizer
+# StandardPlusTokenizer
 
 An extension of Lucene's StandardTokenizer.
 
