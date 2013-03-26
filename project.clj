@@ -5,14 +5,14 @@
   :license {:name "Apache License Verson 2.0"
             :url "http://www.apache.org/licenses/LICENSE-2.0"}
   :dependencies [
-                 [org.apache.solr/solr-core "4.0.0"]
-                 [org.apache.lucene/lucene-test-framework "4.0.0"]
+                 [org.apache.solr/solr-core "4.2.0"]
+                 [org.apache.lucene/lucene-test-framework "4.2.0"]
                  ]
   :profiles  {:dev  {:dependencies  [
-                                     [junit/junit "4.10"]
+                                     [junit/junit "4.11"]
                                      ]
                      }}
-  :plugins  [[lein-junit "1.0.3"]]
+  :plugins  [[lein-junit "1.1.2"]]
   :hooks  [leiningen.hooks.junit]
   :source-paths  ["src/clojure"]
   :java-source-paths   ["src/java" "test/java"]
