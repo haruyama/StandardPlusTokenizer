@@ -27,6 +27,6 @@ This tokenizer tokenizes all characters but spaces.
 
 ## License
 
-Copyright © 2012 HARUYAMA Seigo
+Copyright © HARUYAMA Seigo
 
 Distributed under the Apache License Version 2.0, the same as Apache Solr.
