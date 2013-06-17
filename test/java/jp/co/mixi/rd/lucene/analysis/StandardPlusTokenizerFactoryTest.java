@@ -30,6 +30,7 @@ import org.apache.lucene.analysis.BaseTokenStreamTestCase;
 import org.apache.lucene.analysis.MockTokenizer;
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.Tokenizer;
+import org.apache.lucene.analysis.util.AbstractAnalysisFactory;
 
 /**
  * Simple tests to ensure the standard lucene factories are working.
@@ -40,10 +41,9 @@ public class StandardPlusTokenizerFactoryTest extends TestCase {
   @Test
   public void testStandardPlusTokenizer() throws Exception {
     try (Reader reader = new StringReader("Wha\u0301t's this thing do?")) {
-      StandardPlusTokenizerFactory factory = new StandardPlusTokenizerFactory();
-      factory.setLuceneMatchVersion(BaseTokenStreamTestCase.TEST_VERSION_CURRENT);
-      Map<String, String> args = Collections.emptyMap();
-      factory.init(args);
+      Map<String, String> args = new HashMap<String,String>();
+      args.put(AbstractAnalysisFactory.LUCENE_MATCH_VERSION_PARAM, BaseTokenStreamTestCase.TEST_VERSION_CURRENT.toString());
+      StandardPlusTokenizerFactory factory = new StandardPlusTokenizerFactory(args);
       try (Tokenizer stream = factory.create(reader)) {
         BaseTokenStreamTestCase.assertTokenStreamContents(stream,
             new String[] {"Wha\u0301t's", "this", "thing", "do", "?" });
@@ -62,9 +62,8 @@ public class StandardPlusTokenizerFactoryTest extends TestCase {
     try (Reader reader = new StringReader(content)) {
       Map<String,String> args = new HashMap<String,String>();
       args.put("maxTokenLength", "1000");
-      StandardPlusTokenizerFactory factory = new StandardPlusTokenizerFactory();
-      factory.setLuceneMatchVersion(BaseTokenStreamTestCase.TEST_VERSION_CURRENT);
-      factory.init(args);
+      args.put(AbstractAnalysisFactory.LUCENE_MATCH_VERSION_PARAM, BaseTokenStreamTestCase.TEST_VERSION_CURRENT.toString());
+      StandardPlusTokenizerFactory factory = new StandardPlusTokenizerFactory(args);
       try (Tokenizer stream = factory.create(reader)) {
         BaseTokenStreamTestCase.assertTokenStreamContents(stream,
             new String[] {"one", "two", "three", longWord, "four", "five", "six" });
@@ -75,10 +74,9 @@ public class StandardPlusTokenizerFactoryTest extends TestCase {
   @Test
   public void testStandardPlusTokenizerNihongo() throws Exception {
     try (Reader reader = new StringReader("記号☆☆日本語★あい   え う")) {
-      StandardPlusTokenizerFactory factory = new StandardPlusTokenizerFactory();
-      factory.setLuceneMatchVersion(BaseTokenStreamTestCase.TEST_VERSION_CURRENT);
-      Map<String, String> args = Collections.emptyMap();
-      factory.init(args);
+      Map<String, String> args = new HashMap<String,String>();
+      args.put(AbstractAnalysisFactory.LUCENE_MATCH_VERSION_PARAM, BaseTokenStreamTestCase.TEST_VERSION_CURRENT.toString());
+      StandardPlusTokenizerFactory factory = new StandardPlusTokenizerFactory(args);
       try (Tokenizer stream = factory.create(reader)) {
         BaseTokenStreamTestCase.assertTokenStreamContents(stream,
             new String[] {"記", "号",  "☆", "☆",
@@ -92,10 +90,9 @@ public class StandardPlusTokenizerFactoryTest extends TestCase {
   @Test
   public void testStandardPlusTokenizerSpace() throws Exception {
     try (Reader reader = new StringReader("あ　\nい")) {
-      StandardPlusTokenizerFactory factory = new StandardPlusTokenizerFactory();
-      factory.setLuceneMatchVersion(BaseTokenStreamTestCase.TEST_VERSION_CURRENT);
-      Map<String, String> args = Collections.emptyMap();
-      factory.init(args);
+      Map<String, String> args = new HashMap<String,String>();
+      args.put(AbstractAnalysisFactory.LUCENE_MATCH_VERSION_PARAM, BaseTokenStreamTestCase.TEST_VERSION_CURRENT.toString());
+      StandardPlusTokenizerFactory factory = new StandardPlusTokenizerFactory(args);
       try (Tokenizer stream = factory.create(reader)) {
         BaseTokenStreamTestCase.assertTokenStreamContents(stream,
             new String[] {"あ", "い"});

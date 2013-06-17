@@ -3,7 +3,7 @@
 An extension of Lucene's StandardTokenizer.
 
 This tokenizer tokenizes all characters but spaces.
-(StandardTokenizer doesn't tokenize some kinds of characters: Symbol, Punctuation, ...)
+(StandardTokenizer does not tokenize some kinds of characters: Symbol, Punctuation, ...)
 
 ## Usage
 

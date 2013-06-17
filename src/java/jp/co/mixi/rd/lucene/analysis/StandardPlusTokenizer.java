@@ -26,7 +26,6 @@ import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
 import org.apache.lucene.analysis.tokenattributes.OffsetAttribute;
 import org.apache.lucene.analysis.tokenattributes.PositionIncrementAttribute;
 import org.apache.lucene.analysis.tokenattributes.TypeAttribute;
-import org.apache.lucene.util.AttributeSource;
 import org.apache.lucene.util.Version;
 
 /** A grammar-based tokenizer constructed with JFlex.
@@ -117,14 +116,6 @@ public final class StandardPlusTokenizer extends Tokenizer {
    */
   public StandardPlusTokenizer(Version matchVersion, Reader input) {
     super(input);
-    init(matchVersion);
-  }
-
-  /**
-   * Creates a new StandardPlusTokenizer with a given {@link AttributeSource}.
-   */
-  public StandardPlusTokenizer(Version matchVersion, AttributeSource source, Reader input) {
-    super(source, input);
     init(matchVersion);
   }
 
