@@ -5,6 +5,10 @@ An extension of Lucene's StandardTokenizer.
 This tokenizer tokenizes all characters but spaces.
 (StandardTokenizer does not tokenize some kinds of characters: Symbol, Punctuation, ...)
 
+## Distribution
+
+[http://sourceforge.net/projects/anuenue/files/StandardPlusTokenizer/](http://sourceforge.net/projects/anuenue/files/StandardPlusTokenizer/)
+
 ## Usage
 
 * Install [technomancy/leiningen · GitHub](https://github.com/technomancy/leiningen) Version 2.
