@@ -9,13 +9,17 @@ This tokenizer tokenizes all characters but spaces.
 
 [http://sourceforge.net/projects/anuenue/files/StandardPlusTokenizer/](http://sourceforge.net/projects/anuenue/files/StandardPlusTokenizer/)
 
-## Usage
+## Building
 
 * Install [technomancy/leiningen · GitHub](https://github.com/technomancy/leiningen) Version 2.
 * lein jar
 
 * If you modify .flex, you should install JFlex trunk(http://jflex.svn.sourceforge.net/svnroot/jflex/trunk) and convert .flex to .java using JFlex.
   * java -cp .../jflex-1.5.0-SNAPSHOT.jar jflex.Main src/java/jp/co/mixi/rd/lucene/analysis/StandardPlusTokenizerImpl.jflex
+
+## Usage
+
+Put StandardPlusTokenizer's jar to solr collection's lib directory, such as solr/collection1/lib.
 
 ## solrconfig.xml sample
 
