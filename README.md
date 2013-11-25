@@ -5,11 +5,11 @@ An extension of Lucene's StandardTokenizer.
 This tokenizer tokenizes all characters but spaces.
 (StandardTokenizer does not tokenize some kinds of characters: Symbol, Punctuation, ...)
 
-## File Distribution
+## Distribution
 
 [http://sourceforge.net/projects/anuenue/files/StandardPlusTokenizer/](http://sourceforge.net/projects/anuenue/files/StandardPlusTokenizer/)
 
-## Compilation
+## Building
 
 * Install [technomancy/leiningen · GitHub](https://github.com/technomancy/leiningen) Version 2.
 * lein jar
@@ -17,7 +17,11 @@ This tokenizer tokenizes all characters but spaces.
 * If you modify .flex, you should install JFlex trunk(http://jflex.svn.sourceforge.net/svnroot/jflex/trunk) and convert .flex to .java using JFlex.
   * java -cp .../jflex-1.5.0-SNAPSHOT.jar jflex.Main src/java/jp/co/mixi/rd/lucene/analysis/StandardPlusTokenizerImpl.jflex
 
-## solrconfig.xml Sample
+## Usage
+
+Put StandardPlusTokenizer's jar to solr collection's lib directory, such as solr/collection1/lib.
+
+## solrconfig.xml sample
 
     <fieldType name="text_cjk_plus" class="solr.TextField" positionIncrementGap="100">
       <analyzer>
