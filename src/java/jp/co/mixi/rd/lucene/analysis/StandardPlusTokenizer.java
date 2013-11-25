@@ -190,7 +190,14 @@ public final class StandardPlusTokenizer extends Tokenizer {
   }
 
   @Override
+  public void close() throws IOException {
+    super.close();
+    scanner.yyreset(input);
+  }
+
+  @Override
   public void reset() throws IOException {
+    super.reset();
     scanner.yyreset(input);
     skippedPositions = 0;
   }
