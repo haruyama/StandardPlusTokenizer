@@ -5,6 +5,8 @@ An extension of Lucene's StandardTokenizer.
 This tokenizer tokenizes all characters but spaces.
 (StandardTokenizer does not tokenize some kinds of characters: Symbol, Punctuation, ...)
 
+* [春山 征吾のくけー : Anuenue-0.8.1 と StandardPlusTokenizer - livedoor Blog（ブログ）](http://haruyama.blog.jp/archives/51922530.html)
+
 ## Distribution
 
 [http://sourceforge.net/projects/anuenue/files/StandardPlusTokenizer/](http://sourceforge.net/projects/anuenue/files/StandardPlusTokenizer/)
@@ -14,8 +16,8 @@ This tokenizer tokenizes all characters but spaces.
 * Install [technomancy/leiningen · GitHub](https://github.com/technomancy/leiningen) Version 2.
 * lein jar
 
-* If you modify .flex, you should install JFlex trunk(http://jflex.svn.sourceforge.net/svnroot/jflex/trunk) and convert .flex to .java using JFlex.
-  * java -cp .../jflex-1.5.0-SNAPSHOT.jar jflex.Main src/java/jp/co/mixi/rd/lucene/analysis/StandardPlusTokenizerImpl.jflex
+* If you modify .flex, you should get [JFlex](http://jflex.de/) and convert .flex to .java.
+  * java -cp .../jflex-1.5.0.jar jflex.Main src/java/jp/co/mixi/rd/lucene/analysis/StandardPlusTokenizerImpl.jflex
 
 ## Usage
 
