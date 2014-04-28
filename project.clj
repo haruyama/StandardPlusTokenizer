@@ -1,11 +1,11 @@
-(defproject standard-plus-tokenizer "4.7.2"
+(defproject standard-plus-tokenizer "4.8.0"
   :min-lein-version "2.2.0"
   :description "An extension of Lucene's StandardTokenizer. This tokenizer tokenizes all characters but spaces. (StandardTokenizer doesn't tokenizes some characters: Symbol, Punctuation, ...)"
   :url "https://github.com/haruyama/StandardPlusTokenizer"
   :license {:name "Apache License Verson 2.0"
             :url "http://www.apache.org/licenses/LICENSE-2.0"}
-  :dependencies [[org.apache.solr/solr-core "4.7.2"]
-                 [org.apache.lucene/lucene-test-framework "4.7.2"]]
+  :dependencies [[org.apache.solr/solr-core "4.8.0"]
+                 [org.apache.lucene/lucene-test-framework "4.8.0"]]
   :profiles  {:dev  {:dependencies  [[junit/junit "4.11"]] }}
   :plugins  [[lein-junit "1.1.2"]]
   :hooks  [leiningen.hooks.junit]
