@@ -46,7 +46,7 @@ public final class StandardPlusTokenizerImpl implements StandardPlusTokenizerInt
   public static final int YYEOF = -1;
 
   /** initial size of the lookahead buffer */
-  private static final int ZZ_BUFFERSIZE = 255;
+  private int ZZ_BUFFERSIZE = 255;
 
   /** lexical states */
   public static final int YYINITIAL = 0;
