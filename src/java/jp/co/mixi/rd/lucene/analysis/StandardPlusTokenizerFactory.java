@@ -39,7 +39,6 @@ public class StandardPlusTokenizerFactory extends TokenizerFactory {
   /** Creates a new StandardTokenizerFactory */
   public StandardPlusTokenizerFactory(Map<String,String> args) {
     super(args);
-    assureMatchVersion();
     maxTokenLength = getInt(args, "maxTokenLength", StandardAnalyzer.DEFAULT_MAX_TOKEN_LENGTH);
     if (!args.isEmpty()) {
       throw new IllegalArgumentException("Unknown parameters: " + args);
@@ -47,7 +46,12 @@ public class StandardPlusTokenizerFactory extends TokenizerFactory {
   }
 
   public StandardPlusTokenizer create(AttributeFactory factory, Reader input) {
-    StandardPlusTokenizer tokenizer = new StandardPlusTokenizer(luceneMatchVersion, factory, input);
+    StandardPlusTokenizer tokenizer;
+    if (luceneMatchVersion == null) {
+      tokenizer = new StandardPlusTokenizer(factory, input);
+    } else {
+      tokenizer = new StandardPlusTokenizer(luceneMatchVersion, factory, input);
+    }
     tokenizer.setMaxTokenLength(maxTokenLength);
     return tokenizer;
   }

@@ -27,7 +27,6 @@ import org.apache.lucene.analysis.tokenattributes.OffsetAttribute;
 import org.apache.lucene.analysis.tokenattributes.PositionIncrementAttribute;
 import org.apache.lucene.analysis.tokenattributes.TypeAttribute;
 import org.apache.lucene.util.AttributeFactory;
-import org.apache.lucene.util.AttributeSource;
 import org.apache.lucene.util.Version;
 
 /** A grammar-based tokenizer constructed with JFlex.
@@ -106,6 +105,9 @@ public final class StandardPlusTokenizer extends Tokenizer {
         throw new IllegalArgumentException("maxTokenLength must be greater than zero");
     }
     this.maxTokenLength = length;
+    if (scanner instanceof StandardPlusTokenizerImpl) {
+      scanner.setBufferSize(Math.min(length, 1024 * 1024)); // limit buffer size to 1M chars
+    }
   }
 
   /** @see #setMaxTokenLength */
@@ -121,6 +123,14 @@ public final class StandardPlusTokenizer extends Tokenizer {
    *
    * See http://issues.apache.org/jira/browse/LUCENE-1068
    */
+  public StandardPlusTokenizer(Reader input) {
+    this(Version.LATEST, input);
+  }
+
+  /**
+   * @deprecated Use {@link #StandardPlusTokenizer(Reader)}
+   */
+  @Deprecated
   public StandardPlusTokenizer(Version matchVersion, Reader input) {
     super(input);
     init(matchVersion);
@@ -129,6 +139,14 @@ public final class StandardPlusTokenizer extends Tokenizer {
   /**
    * Creates a new StandardPlusTokenizer with a given {@link org.apache.lucene.util.AttributeFactory}
    */
+  public StandardPlusTokenizer(AttributeFactory factory, Reader input) {
+    this(Version.LATEST, factory, input);
+  }
+
+  /**
+   * @deprecated Use {@link #StandardPlusTokenizer(AttributeFactory, Reader)}
+   */
+  @Deprecated
   public StandardPlusTokenizer(Version matchVersion, AttributeFactory factory, Reader input) {
     super(factory, input);
     init(matchVersion);
