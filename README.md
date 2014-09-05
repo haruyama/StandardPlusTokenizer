@@ -17,7 +17,8 @@ This tokenizer tokenizes all characters but spaces.
 * lein jar
 
 * If you modify .flex, you should get [JFlex](http://jflex.de/) and convert .flex to .java.
-  * java -cp .../jflex-1.6.0.jar jflex.Main src/java/jp/co/mixi/rd/lucene/analysis/StandardPlusTokenizerImpl.jflex
+    * java -cp .../jflex-1.6.0.jar jflex.Main src/java/jp/co/mixi/rd/lucene/analysis/StandardPlusTokenizerImpl.jflex
+        * After 4.10.0, You should edit resultant src/java/jp/co/mixi/rd/lucene/analysis/StandardPlusTokenizerImpl.java.
 
 ## Usage
 
